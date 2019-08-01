@@ -8,20 +8,20 @@ client.database.call('get_content_replies', ['authorname','permalink']).then(res
     let reputation = 0;
     if(!uniqueAuthor.indexOf(result.author) >= 0)
       reputation = repLog10(result.author_reputation);
-      let amountToSend = 0;
+      let amountToSend = "0";
       let author = result.author;
       if(reputation >= 30 && reputation < 40) {
-        amountToSend = 100;
+        amountToSend = "100";
       } else if(reputation >= 40 && reputation < 50) {
-        amountToSend = 150;
+        amountToSend = "150";
       } else if(reputation >= 50 && reputation < 60) {
-        amountToSend = 200;
+        amountToSend = "200";
       } else if(reputation >= 60 && reputation < 70) {
-        amountToSend = 250;
+        amountToSend = "250";
       } else if(reputation >= 70) {
-        amountToSend = 300;
+        amountToSend = "300";
       }
-      if(amountToSend > 0) {
+      if(amountToSend !== "0") {
         uniqueAuthor.push({author, amountToSend});
       }
   });
