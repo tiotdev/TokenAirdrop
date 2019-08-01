@@ -21,7 +21,9 @@ client.database.call('get_content_replies', ['authorname','permalink']).then(res
       } else if(reputation >= 70) {
         amountToSend = 300;
       }
-      uniqueAuthor.push({author, amountToSend});
+      if(amountToSend > 0) {
+        uniqueAuthor.push({author, amountToSend});
+      }
   });
   fs.writeFile('ToSend.txt', JSON.stringify(uniqueAuthor), (err) => {
     if (err) throw err;
