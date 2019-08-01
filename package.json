@@ -1,0 +1,21 @@
+{
+  "name": "token_airdrop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "forever start --minUptime 1000 --spinSleepTime 1000 index.js",
+    "stop": "forever stop index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dsteem": "^0.10.1"
+  },
+  "dependencies": {
+    "dsteem": "^0.10.1",
+    "forever": "^0.15.3",
+    "steem": "^0.7.2"
+  }
+}
